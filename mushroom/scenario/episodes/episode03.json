@@ -1,0 +1,229 @@
+{
+  "episode_id": "EP03",
+  "title": "학원가에서 받은 음료",
+
+  "background": {
+    "character": "중학교 2학년 학생",
+    "situation": "학원 수업을 마치고 친구와 함께 귀가하던 중, 학원가에서 처음 보는 사람이 무료 음료를 나눠주고 있다."
+  },
+
+  "total_stages": 5,
+
+  "stages": [
+    {
+      "stage_id": "EP03_STAGE01",
+      "stage_number": 1,
+      "title": "낯선 음식과 음료",
+      "type": "risk_awareness",
+
+      "location": "학원가 거리",
+
+      "description": "학원가에서 처음 보는 사람이 학생들에게 무료 음료를 나눠주고 있다. 음료에는 제품명이나 제공자의 정보가 명확하게 표시되어 있지 않다.",
+
+      "npc_speaker": "모르는 사람",
+      "npc_identity": "학원가에서 정체불명의 무료 음료를 나눠주는 낯선 사람",
+      "npc_stance": "학생들이 의심 없이 음료를 받아가도록 친절하고 가볍게 권하려 함",
+      "npc_boundaries": "제품 정보나 제공자 신원을 구체적으로 밝히지 않고 얼버무린다. 위험성을 인정하지 않는다.",
+
+      "messages": [
+        {
+          "speaker": "모르는 사람",
+          "text": "학생들 무료로 주는 거야. 하나씩 가져가."
+        },
+        {
+          "speaker": "모르는 사람",
+          "text": "친구랑 같이 마셔도 돼."
+        },
+        {
+          "speaker": "친구",
+          "text": "공짜인데 하나 받아볼까?"
+        }
+      ],
+
+      "question": "이 상황에서 어떤 점이 가장 신경 쓰이나요?",
+
+      "evaluation_axis": "risk_awareness",
+
+      "evaluation_criteria": [
+        "모르는 사람이 제공한 음식이나 음료라는 점을 위험 요소로 인식하는가",
+        "음료의 출처와 안전성을 확인하려 하는가",
+        "무료라는 이유만으로 안전하다고 판단하지 않는가"
+      ],
+
+      "next_stage": "EP03_STAGE02"
+    },
+
+    {
+      "stage_id": "EP03_STAGE02",
+      "stage_number": 2,
+      "title": "친구의 권유",
+      "type": "refusal",
+
+      "location": "학원가 편의점 앞",
+
+      "description": "친구가 방금 받은 음료를 마셔보자고 권유한다. 친구는 다른 학생들도 받아갔다며 괜찮을 것이라고 말한다.",
+
+      "npc_speaker": "친구",
+      "npc_identity": "방금 받은 음료를 같이 마셔보자고 권하는 친구",
+      "npc_stance": "다른 학생들도 받아갔으니 괜찮을 거라며 사용자가 음료를 마시도록 설득하려 함",
+      "npc_boundaries": "사용자의 우려를 대수롭지 않게 여기고 걱정이 지나치다는 식으로 넘긴다.",
+
+      "messages": [
+        {
+          "speaker": "친구",
+          "text": "다른 애들도 다 받아갔는데 괜찮겠지."
+        },
+        {
+          "speaker": "친구",
+          "text": "냄새도 이상하지 않은데 그냥 마셔보자."
+        },
+        {
+          "speaker": "친구",
+          "text": "너무 걱정하는 거 아니야?"
+        }
+      ],
+
+      "question": "친구가 음료를 마시자고 한다면 어떻게 하겠습니까?",
+
+      "evaluation_axis": "refusal",
+
+      "evaluation_criteria": [
+        "출처가 불분명한 음식이나 음료를 먹거나 마시지 않겠다는 의사를 표현하는가",
+        "친구의 권유에도 자신의 판단을 유지하는가",
+        "안전성을 확인하기 전에는 섭취하지 않으려 하는가"
+      ],
+
+      "next_stage": "EP03_STAGE03"
+    },
+
+    {
+      "stage_id": "EP03_STAGE03",
+      "stage_number": 3,
+      "title": "주변의 압박",
+      "type": "refusal_advanced",
+
+      "location": "학원가 버스정류장",
+
+      "description": "친구가 계속해서 음료를 마시자고 권유하고, 주변의 다른 학생들도 별일 아니라는 반응을 보인다.",
+
+      "npc_speaker": "친구",
+      "npc_identity": "주변 분위기를 이용해 음료를 마시도록 계속 압박하는 친구",
+      "npc_stance": "다 같이 마시는 분위기를 만들어 사용자가 동참하게 만들려 함",
+      "npc_boundaries": "한 모금만 마셔보라는 식으로 타협을 제안하며 물러서지 않는다. 위험성을 인정하지 않는다.",
+
+      "messages": [
+        {
+          "speaker": "친구",
+          "text": "우리만 안 마시면 이상해 보이잖아."
+        },
+        {
+          "speaker": "주변 학생",
+          "text": "나도 받았는데 그냥 음료 같은데?"
+        },
+        {
+          "speaker": "친구",
+          "text": "한 모금만 마셔보고 이상하면 버리면 되지."
+        }
+      ],
+
+      "question": "주변에서 계속 괜찮다고 한다면 어떻게 행동하겠습니까?",
+
+      "evaluation_axis": "refusal",
+
+      "evaluation_criteria": [
+        "주변 사람들의 반응만으로 안전성을 판단하지 않는가",
+        "섭취하지 않겠다는 의사를 분명하게 유지하는가",
+        "음료를 억지로 섭취하지 않고 안전한 장소로 이동하려 하는가"
+      ],
+
+      "next_stage": "EP03_STAGE04"
+    },
+
+    {
+      "stage_id": "EP03_STAGE04",
+      "stage_number": 4,
+      "title": "이상 반응 발견",
+      "type": "help_request",
+
+      "location": "학원 건물 앞",
+
+      "description": "함께 있던 학생 한 명이 음료를 마신 뒤 갑자기 어지럽다고 말하며 제대로 서 있지 못한다.",
+
+      "npc_speaker": "친구",
+      "npc_identity": "이상 증상을 보인 친구를 걱정하면서도 문제가 커지는 걸 피하려는 친구",
+      "npc_stance": "괜찮을 거라며 상황을 대수롭지 않게 넘기고 도움 요청을 만류하려 함",
+      "npc_boundaries": "심각성을 인정하지 않고 어른에게 알리는 것을 주저하게 만든다.",
+
+      "messages": [
+        {
+          "speaker": "학생",
+          "text": "갑자기 어지러운데..."
+        },
+        {
+          "speaker": "친구",
+          "text": "조금 쉬면 괜찮아질 거야."
+        },
+        {
+          "speaker": "다른 학생",
+          "text": "괜히 선생님한테 말하지 말자."
+        }
+      ],
+
+      "question": "이 상황에서 당신은 어떤 행동을 하겠습니까?",
+
+      "evaluation_axis": "help_request",
+
+      "evaluation_criteria": [
+        "학생의 이상 반응을 위험 신호로 인식하는가",
+        "혼자 해결하려 하지 않고 도움을 요청하려 하는가",
+        "학원 강사, 보호자, 학교 관계자 또는 긴급 도움을 요청할 수 있는 대상에게 알리려 하는가"
+      ],
+
+      "next_stage": "EP03_STAGE05"
+    },
+
+    {
+      "stage_id": "EP03_STAGE05",
+      "stage_number": 5,
+      "title": "최종 판단",
+      "type": "help_request_advanced",
+
+      "location": "학원 상담실",
+
+      "description": "학생이 이상 반응을 보인 사실을 알게 된 학원 관계자가 상황을 확인하려 한다. 주변 친구들은 괜히 일이 커질 수 있다며 조용히 넘어가자고 한다.",
+
+      "npc_speaker": "친구",
+      "npc_identity": "괜히 일이 커질까 봐 사실을 숨기고 싶어하는 친구",
+      "npc_stance": "학원 관계자에게 사실대로 말하지 말고 조용히 넘어가자고 사용자를 설득하려 함",
+      "npc_boundaries": "사용자가 사실대로 말하려 해도 말리거나 걱정을 대수롭지 않게 넘긴다.",
+
+      "messages": [
+        {
+          "speaker": "친구",
+          "text": "그냥 집에 보내면 되는 거 아니야?"
+        },
+        {
+          "speaker": "친구",
+          "text": "괜히 신고하거나 말하면 우리까지 조사받을 수도 있잖아."
+        },
+        {
+          "speaker": "학원 관계자",
+          "text": "무슨 일이 있었는지 알고 있는 사람이 있으면 이야기해줘."
+        }
+      ],
+
+      "question": "이 상황에서 당신은 어떻게 대응하겠습니까?",
+
+      "evaluation_axis": "help_request",
+
+      "evaluation_criteria": [
+        "상황을 숨기자는 주변의 요구에 따르지 않는가",
+        "학생의 안전을 우선하여 필요한 정보를 전달하려 하는가",
+        "신뢰할 수 있는 어른이나 적절한 기관에 상황을 알리려 하는가",
+        "음료를 제공한 사람과 관련된 사실을 알고 있다면 숨기지 않고 전달하려 하는가"
+      ],
+
+      "next_stage": null
+    }
+  ]
+}

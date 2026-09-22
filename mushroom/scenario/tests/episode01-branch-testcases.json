@@ -1,0 +1,116 @@
+{
+  "EP01_STAGE01": [
+    {
+      "score": 3,
+      "expected_branch": "high",
+      "expected_next_stage": "EP01_STAGE02"
+    },
+    {
+      "score": 2,
+      "expected_branch": "medium",
+      "expected_next_stage": "EP01_STAGE02"
+    },
+    {
+      "score": 1,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE02"
+    },
+    {
+      "score": 0,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE02"
+    }
+  ],
+
+  "EP01_STAGE02": [
+    {
+      "score": 3,
+      "expected_branch": "high",
+      "expected_next_stage": "EP01_STAGE03"
+    },
+    {
+      "score": 2,
+      "expected_branch": "medium",
+      "expected_next_stage": "EP01_STAGE03"
+    },
+    {
+      "score": 1,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE03"
+    },
+    {
+      "score": 0,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE03"
+    }
+  ],
+
+  "EP01_STAGE03": [
+    {
+      "score": 3,
+      "expected_branch": "high",
+      "expected_next_stage": "EP01_STAGE04"
+    },
+    {
+      "score": 2,
+      "expected_branch": "medium",
+      "expected_next_stage": "EP01_STAGE04"
+    },
+    {
+      "score": 1,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE04"
+    },
+    {
+      "score": 0,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE04"
+    }
+  ],
+
+  "EP01_STAGE04": [
+    {
+      "score": 3,
+      "expected_branch": "high",
+      "expected_next_stage": "EP01_STAGE05"
+    },
+    {
+      "score": 2,
+      "expected_branch": "medium",
+      "expected_next_stage": "EP01_STAGE05"
+    },
+    {
+      "score": 1,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE05"
+    },
+    {
+      "score": 0,
+      "expected_branch": "low",
+      "expected_next_stage": "EP01_STAGE05"
+    }
+  ],
+
+  "EP01_STAGE05": [
+    {
+      "score": 3,
+      "expected_branch": "high",
+      "expected_next_stage": null
+    },
+    {
+      "score": 2,
+      "expected_branch": "medium",
+      "expected_next_stage": null
+    },
+    {
+      "score": 1,
+      "expected_branch": "low",
+      "expected_next_stage": null
+    },
+    {
+      "score": 0,
+      "expected_branch": "low",
+      "expected_next_stage": null
+    }
+  ]
+}

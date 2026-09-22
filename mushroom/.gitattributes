@@ -1,0 +1,14 @@
+# Normalize line endings to LF for all text files, regardless of each
+# contributor's local core.autocrlf setting. This avoids whole-file diffs
+# and merge conflicts caused by CRLF/LF mismatches between branches.
+* text=auto eol=lf
+
+# Binary files should never be modified by line-ending normalization.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.pyc binary

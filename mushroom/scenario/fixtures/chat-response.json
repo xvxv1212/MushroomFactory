@@ -1,0 +1,17 @@
+{
+  "episode_id": "EP01",
+
+  "stage_id": "EP01_STAGE01",
+
+  "npc_response": "그렇게까지 걱정할 필요 있어? 다들 괜찮다는데.",
+
+  "feedback": "포장과 출처가 불분명하다는 점을 의심한 것이 좋아요.",
+
+  "axis": "risk_awareness",
+
+  "score": 3,
+
+  "next_stage": "EP01_STAGE02",
+
+  "episode_completed": false
+}

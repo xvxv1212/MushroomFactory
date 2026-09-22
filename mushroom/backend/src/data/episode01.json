@@ -1,0 +1,31 @@
+{
+  "episode_id": "EP01",
+  "title": "시험기간 스터디 그룹",
+  "stages": [
+    {
+      "stage_id": "EP01_STAGE01",
+      "title": "위험 인지",
+      "next_stage": "EP01_STAGE02"
+    },
+    {
+      "stage_id": "EP01_STAGE02",
+      "title": "거절 의사 표현",
+      "next_stage": "EP01_STAGE03"
+    },
+    {
+      "stage_id": "EP01_STAGE03",
+      "title": "대안 제시 및 이탈",
+      "next_stage": "EP01_STAGE04"
+    },
+    {
+      "stage_id": "EP01_STAGE04",
+      "title": "도움 요청",
+      "next_stage": "EP01_STAGE05"
+    },
+    {
+      "stage_id": "EP01_STAGE05",
+      "title": "상황 종료 및 평가",
+      "next_stage": null
+    }
+  ]
+}

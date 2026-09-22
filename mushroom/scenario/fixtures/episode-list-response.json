@@ -1,0 +1,14 @@
+[
+  {
+    "episode_id": "EP01",
+    "title": "시험기간 스터디 그룹",
+    "description": "시험기간 스터디 그룹에서 발생하는 위험 상황에 대응해봅니다.",
+    "total_stages": 5
+  },
+  {
+    "episode_id": "EP02",
+    "title": "SNS에서 시작된 유혹",
+    "description": "SNS에서 출처 불명의 약물 권유를 받는 상황에 대응해봅니다.",
+    "total_stages": 5
+  }
+]
