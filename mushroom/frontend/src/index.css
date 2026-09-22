@@ -1,0 +1,2448 @@
+:root {
+  --header-h: 76px;
+}
+
+/* =====================================================================
+   Site header (공통)
+   - 로고 + 서비스명. 모든 페이지 상단에 고정 노출됩니다. (App.tsx 참고)
+   ===================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: var(--header-h);
+  padding: 0 20px;
+  box-sizing: border-box;
+  background: #FFFFFF;
+  border-bottom: 1px solid #EEE9DE;
+}
+
+.site-header-logo {
+  display: flex;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+}
+
+.site-header-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.site-header-name {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #23262B;
+}
+
+.play-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 20px 16px;
+  box-sizing: border-box;
+  height: 100vh;
+  height: calc(100dvh - var(--header-h));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.play-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #FFFFFF;
+}
+
+.play-topbar-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.game-header {
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.progress-wrapper {
+  flex-shrink: 0;
+  margin: 10px 0;
+}
+
+.progress-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 12px;
+  background: #e5e7eb;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #4f7cff;
+  transition: width 0.3s ease;
+}
+
+.mini-stats-panel {
+  flex: 0 0 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 6px 0;
+}
+
+.mini-stat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.mini-stat-label {
+  flex-shrink: 0;
+  width: 56px;
+  font-size: 0.72rem;
+  color: #5A5F5E;
+  white-space: nowrap;
+}
+
+.mini-stat-track {
+  flex: 1;
+  height: 5px;
+  background: #E5E1D8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.mini-stat-fill {
+  height: 100%;
+  background: #3D7C71;
+  border-radius: 999px;
+}
+
+.mini-stat-value {
+  flex-shrink: 0;
+  width: 30px;
+  text-align: right;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #3D7C71;
+}
+
+.play-layout {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: stretch;
+  gap: 20px;
+}
+
+.play-story {
+  flex: 0 0 340px;
+  overflow-y: auto;
+}
+
+.play-chat {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 560px) {
+  .play-page {
+    height: auto;
+    overflow: visible;
+  }
+
+  .play-layout {
+    flex-direction: column;
+  }
+
+  .play-story {
+    flex: none;
+    width: 100%;
+  }
+}
+
+.stage-header {
+  flex-shrink: 0;
+  margin-bottom: 10px;
+}
+
+.stage-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.stage-title-row h2 {
+  margin: 0;
+}
+
+.stage-location {
+  flex-shrink: 0;
+  font-size: 0.82rem;
+  color: #5A5F5E;
+  background: #F5F3ED;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.scene-description {
+  padding: 16px;
+  background: #f5f7fa;
+}
+
+.chat-window {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+  border: 1px solid #EFEFEF;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.conversation {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 18px 16px;
+  overflow-y: auto;
+}
+
+.conversation-turn {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.conversation-turn-label {
+  align-self: center;
+  margin: 6px 0;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: #F3F1EA;
+  color: #9C978C;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.npc-message {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.npc-message--me {
+  flex-direction: row-reverse;
+}
+
+.npc-avatar {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #FFB199 0%, #8567C9 55%, #4F7CFF 100%);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bubblePopIn 0.2s ease-out;
+}
+
+.npc-message-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-width: 78%;
+}
+
+.npc-name {
+  margin-left: 4px;
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #8e8e8e;
+}
+
+.npc-bubble-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.npc-bubble {
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px 14px;
+  border-radius: 22px;
+  background: #EFEFEF;
+  color: #1c1c1e;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  animation: bubblePopIn 0.2s ease-out;
+}
+
+.npc-bubble--me {
+  background: linear-gradient(135deg, #A78BFA, #F472B6);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+@keyframes bubblePopIn {
+  from {
+    transform: scale(0.85);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.npc-bubble--typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: #3D7C71;
+  padding: 12px 16px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.5;
+  animation: typingBounce 1.2s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes typingBounce {
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  30% {
+    transform: translateY(-4px);
+    opacity: 1;
+  }
+}
+
+.question-area {
+  flex-shrink: 0;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #ddd;
+}
+
+.dm-composer {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  padding: 10px 12px;
+  border-top: 1px solid #EFEFEF;
+  background: #FAFAFA;
+}
+
+.dm-composer-wrapper {
+  flex-shrink: 0;
+  background: #FAFAFA;
+}
+
+
+/* 욕설 입력 경고 */
+
+.chat-input-warning {
+  padding: 8px 14px 0;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #D94A4A;
+  background: #FAFAFA;
+}
+
+
+/* 욕설 감지된 입력창 */
+
+.dm-composer-input--warning {
+  outline: 1px solid #E79A9A;
+  background: #FFF4F4;
+}
+
+.dm-composer-input {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  background: #F0F0F0;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  font-family: inherit;
+  max-height: 100px;
+  box-sizing: border-box;
+}
+
+.dm-composer-input:disabled {
+  opacity: 0.6;
+}
+
+.dm-composer-send {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #A78BFA, #F472B6);
+  box-shadow: 0 2px 8px rgba(167, 139, 250, 0.45);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: box-shadow 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+}
+
+.dm-composer-send:hover:not(:disabled) {
+  box-shadow: 0 3px 10px rgba(167, 139, 250, 0.6);
+  transform: translateY(-1px);
+}
+
+.dm-composer-send:disabled {
+  background: #C7C2B6;
+  cursor: default;
+}
+
+/* =====================================================================
+   Scene dialogue (EP02: 노래방/룸카페처럼 대면 상황인 에피소드용)
+   - 메신저 채팅 대신, 룸 배경(KaraokeBackdrop) + 캐릭터 대사창으로 보여줍니다.
+   ===================================================================== */
+.chat-window--vn {
+  position: relative;
+  background: linear-gradient(180deg, #2C2140 0%, #3D2A55 55%, #55366A 100%);
+  border: none;
+}
+
+.conversation--vn {
+  justify-content: flex-end;
+}
+
+.chat-window--vn .conversation-turn-label {
+  background: rgba(255, 255, 255, 0.18);
+  color: #F3E9FF;
+}
+
+.chat-window--vn .dm-composer {
+  background: rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.chat-window--vn .dm-composer-input {
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.vn-backdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.vn-spotlight {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  filter: blur(16px);
+  opacity: 0.35;
+}
+
+.vn-spotlight--a {
+  top: -60px;
+  left: -40px;
+  background: radial-gradient(circle, #FFD9A0 0%, transparent 70%);
+}
+
+.vn-spotlight--b {
+  top: -20px;
+  right: -60px;
+  background: radial-gradient(circle, #8FD9C4 0%, transparent 70%);
+}
+
+.vn-disco-ball {
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+}
+
+.vn-note {
+  position: absolute;
+  color: #F3E9FF;
+  opacity: 0.55;
+  font-size: 1.1rem;
+}
+
+.vn-note--a {
+  top: 60px;
+  left: 12%;
+}
+
+.vn-note--b {
+  top: 90px;
+  right: 16%;
+  font-size: 1.4rem;
+}
+
+.vn-note--c {
+  top: 40px;
+  right: 32%;
+  font-size: 0.9rem;
+}
+
+.vn-line {
+  position: relative;
+  z-index: 1;
+  align-self: flex-start;
+  width: fit-content;
+  max-width: 88%;
+  padding: 10px 14px;
+  background: rgba(255, 255, 255, 0.94);
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+}
+
+.vn-line--me {
+  align-self: flex-end;
+  background: #3D7C71;
+}
+
+.vn-line--me .vn-line-name,
+.vn-line--me .vn-line-text {
+  color: #FFFFFF;
+}
+
+.vn-line--advance {
+  position: relative;
+  padding-right: 32px;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  color: inherit;
+  font: inherit;
+}
+
+.vn-advance-hint {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  color: #6B4FA0;
+  font-size: 1rem;
+  animation: vnAdvanceHint 1.2s infinite ease-in-out;
+}
+
+@keyframes vnAdvanceHint {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(3px);
+    opacity: 1;
+  }
+}
+
+.vn-line--prompt .vn-line-text {
+  color: #6B4FA0;
+  font-style: italic;
+}
+
+.vn-line-name {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #6B4FA0;
+}
+
+.vn-line-text {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #23262B;
+}
+
+/* =====================================================================
+   Instagram DM 연출 (EP03: DM 단계에서만 적용, location이 "인스타그램 DM"인 stage)
+   ===================================================================== */
+.ig-dm-header {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  border-bottom: 1px solid #EFEFEF;
+  background: #FFFFFF;
+}
+
+.ig-dm-back {
+  font-size: 1.3rem;
+  color: #23262B;
+  line-height: 1;
+}
+
+.ig-dm-avatar {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F58529, #DD2A7B 45%, #8134AF 100%);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ig-dm-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.ig-dm-username {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: #23262B;
+}
+
+.ig-dm-status {
+  font-size: 0.72rem;
+  color: #8e8e8e;
+}
+
+.ig-message {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: flex-start;
+}
+
+.ig-message--me {
+  align-items: flex-end;
+}
+
+.ig-bubble {
+  width: fit-content;
+  max-width: 78%;
+  padding: 10px 14px;
+  border-radius: 22px;
+  background: #EFEFEF;
+  color: #1c1c1e;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  animation: bubblePopIn 0.2s ease-out;
+}
+
+.ig-bubble--me {
+  background: #3897F0;
+  color: #FFFFFF;
+}
+
+.ig-bubble--typing {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ig-bubble--typing .typing-dot {
+  background: #9C978C;
+}
+
+.ig-bubble--image {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  max-width: 160px;
+  padding: 0;
+  background: transparent;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+.ig-product-photo {
+  display: block;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+.ig-review-photo {
+  display: block;
+  width: 160px;
+  height: 210px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 14px;
+}
+
+.next-button {
+  width: 100%;
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #3D7C71;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.next-button:hover {
+  background: #33665D;
+}
+
+.result-area {
+  flex-shrink: 0;
+}
+
+.feedback-card {
+  margin-top: 12px;
+  padding: 14px 20px;
+  border: 1px solid #ddd;
+}
+
+.evaluation-target {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.evaluation-target-label {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.evaluation-target-title {
+  font-size: 0.85rem;
+  color: #5A5F5E;
+}
+
+.evaluation-target-value {
+  font-size: 1.05rem;
+  color: #23262B;
+}
+
+.evaluation-axes {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.evaluation-axes .mini-stat {
+  width: 140px;
+}
+
+.manyang-popup {
+  align-self: flex-end;
+  max-width: 64%;
+  animation: manyangPopIn 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes manyangPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(-12px);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.06) translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.manyang-coach {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  padding: 12px 14px;
+  background: #EAF3F1;
+  border: 1.5px solid #3D7C71;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(61, 124, 113, 0.28);
+}
+
+.manyang-coach strong {
+  display: block;
+  color: #2C5F56;
+  font-size: 0.8rem;
+}
+
+.manyang-coach p {
+  margin: 2px 0 0;
+  font-size: 0.74rem;
+  line-height: 1.35;
+}
+
+.manyang-character {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #FFFFFF;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.manyang-character img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* =====================================================================
+   Home page (첫 화면)
+   - 4단 구조: home-header / home-hero / home-cta / home-footer
+   - 말풍선(home-bubble)은 ManyangCoach 팝업과 같은 민트 배경 +
+     초록 테두리(#3D7C71) 톤을 재사용해서 캐릭터 말풍선 느낌을 통일했습니다.
+   ===================================================================== */
+.home-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
+.home-hero,
+.home-cta {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.home-character-box {
+  flex: 0 0 240px;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.home-character-img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.home-bubble {
+  position: relative;
+  flex: 1;
+  min-width: 240px;
+  min-height: 140px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 24px 28px;
+  background: #EAF3F1;
+  border: 1.5px solid #3D7C71;
+  border-radius: 24px;
+  color: #23262B;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.home-bubble p {
+  margin: 0;
+}
+
+/* 말풍선 꼬리: 캐릭터가 있는 쪽을 향하도록 방향별로 위치만 다르게 줌 */
+.home-bubble--right::before,
+.home-bubble--left::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  background: #EAF3F1;
+  transform: translateY(-50%) rotate(45deg);
+}
+
+.home-bubble--right::before {
+  left: -9px;
+  border-left: 1.5px solid #3D7C71;
+  border-bottom: 1.5px solid #3D7C71;
+}
+
+.home-bubble--left::before {
+  right: -9px;
+  border-right: 1.5px solid #3D7C71;
+  border-top: 1.5px solid #3D7C71;
+}
+
+.home-start-button {
+  display: block;
+  margin-top: 16px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 999px;
+  background: #3D7C71;
+  color: #FFFFFF;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.home-start-button:hover {
+  background: #33665D;
+}
+
+.home-start-button--outline {
+  background: transparent;
+  color: #3D7C71;
+  border: 1.5px solid #3D7C71;
+}
+
+.home-start-button--outline:hover {
+  background: #EAF3F1;
+}
+
+/* 로딩/처리 중일 때 버튼을 눌러도 반응이 없어 보이지 않도록,
+   버튼 자체를 흐리게 + 커서를 default로 바꿔서 "지금은 못 누른다"는
+   걸 보여줍니다. (ResultPage의 "다시 도전하기" 등에서 사용) */
+.home-start-button:disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+.home-footer {
+  padding-top: 20px;
+  border-top: 1px solid #EEE9DE;
+  text-align: center;
+  color: #8E8A7E;
+  font-size: 0.85rem;
+}
+
+.home-footer strong {
+  color: #3D7C71;
+}
+
+/* =====================================================================
+   Tutorial page (온보딩 설명)
+   - Home page와 같은 캐릭터 박스 + 말풍선(.home-character-box / .home-bubble)
+     스타일을 재사용해서 Home → Tutorial → Episode 목록 흐름의 톤을 맞췄습니다.
+   ===================================================================== */
+.tutorial-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 24px 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tutorial-guide-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 24px;
+  margin-top: 28px;
+}
+
+.tutorial-decor {
+  width: 190px;
+  height: auto;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+@media (max-width: 1240px) {
+  .tutorial-decor {
+    display: none;
+  }
+}
+
+.tutorial-content {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.tutorial-guide {
+  width: 100%;
+  max-width: 640px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.tutorial-guide-item {
+  border-radius: 16px;
+  padding: 18px 20px;
+  background: #F5F1E6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tutorial-guide-icon {
+  font-size: 1.4rem;
+}
+
+.tutorial-guide-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #23262B;
+}
+
+.tutorial-guide-desc {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #6B6558;
+  line-height: 1.5;
+}
+
+.tutorial-privacy-note {
+  margin: 24px 0 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9C978C;
+}
+
+@media (max-width: 640px) {
+  .tutorial-content {
+    flex-direction: column;
+  }
+
+  .tutorial-guide {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero,
+  .home-cta {
+    flex-direction: column;
+  }
+
+  .home-character-box {
+    flex: none;
+    width: 100%;
+    height: 200px;
+  }
+}
+
+/* =====================================================================
+   Result page (에피소드 종료 화면)
+   - Home / Tutorial과 같은 캐릭터 박스 + 말풍선을 재사용하고,
+     PlayPage 우측 상단 mini-stat과 같은 초록(#3D7C71) 톤으로
+     결과 그래프를 맞췄습니다.
+   ===================================================================== */
+.result-page {
+  max-width: 700px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 32px 20px 40px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 32px;
+}
+
+.result-hero {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+/* 결과 API(GET /api/sessions/{id}/result) 응답을 기다리는 동안 */
+.result-loading {
+  margin: 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #5A5F5E;
+}
+
+/* Backend API 호출이 실패했을 때 보여주는 공통 에러 배너.
+   PlayPage.tsx에서도 같은 클래스명(api-error)을 그대로 재사용합니다 -
+   즉 여기서 스타일을 바꾸면 PlayPage의 에러 표시에도 함께 적용됩니다.
+   (PlayPage 쪽은 안쪽에 <p>만 있고 버튼은 없어서, 아래 flex 레이아웃이
+   버튼 없이도 자연스럽게 보입니다.) */
+.api-error {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #FBEAEA;
+  border: 1px solid #F0C6C6;
+  color: #B3453E;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.api-error p {
+  margin: 0;
+}
+
+/* ResultPage의 "다시 불러오기" 버튼. 에러 배너(api-error) 안에서만
+   쓰여서 톤을 붉은 계열로 맞췄습니다 (기본 home-start-button의
+   초록/teal 톤을 그대로 쓰면 에러 상황과 어울리지 않아서 별도 정의). */
+.api-error-retry {
+  padding: 8px 16px;
+  border: 1px solid #B3453E;
+  border-radius: 999px;
+  background: transparent;
+  color: #B3453E;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.api-error-retry:hover {
+  background: #F5D9D9;
+}
+
+.api-error-retry:disabled {
+  opacity: 0.6;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* result.is_complete가 false일 때만 보여주는 경고 배너.
+   "아직 에피소드를 끝내지 않은 세션"인데 /result URL로 들어온
+   경우를 위한 안내입니다. (예: 사용자가 주소를 직접 조작하거나,
+   중간에 새로고침 후 다시 결과 페이지로 돌아온 경우) */
+.result-incomplete-banner {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: #FFF4DE;
+  border: 1px solid #F3DFA8;
+  color: #8A6D1D;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.result-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 28px;
+  background: #F5F3ED;
+  border: 1px solid #EEE9DE;
+  border-radius: 24px;
+}
+
+.result-stats-title {
+  margin: 0 0 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3D7C71;
+}
+
+/* "총 N개 단계 완료" 한 줄 요약 (completed_stages.length) */
+.result-stats-subtitle {
+  margin: -8px 0 4px;
+  font-size: 0.78rem;
+  color: #9C978C;
+}
+
+.result-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.result-stat-label {
+  flex-shrink: 0;
+  width: 76px;
+  font-size: 0.9rem;
+  color: #5A5F5E;
+}
+
+.result-stat-track {
+  flex: 1;
+  height: 10px;
+  background: #E5E1D8;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.result-stat-fill {
+  height: 100%;
+  background: #3D7C71;
+  border-radius: 999px;
+}
+
+.result-stat-value {
+  flex-shrink: 0;
+  width: 42px;
+  text-align: right;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #3D7C71;
+}
+
+/* result.stage_results (Stage별 feedback 문자열 배열)를 보여주는
+   카드. .result-stats와 톤을 맞추되, 각 Stage를 구분해서 보여주기
+   위해 안쪽에 다시 한 번 카드(.result-stage-item)를 둡니다. */
+.result-stage-feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 28px;
+  background: #F5F3ED;
+  border: 1px solid #EEE9DE;
+  border-radius: 24px;
+}
+
+.result-stage-item {
+  padding: 14px 16px;
+  background: #FFFFFF;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.result-stage-item strong {
+  font-size: 0.8rem;
+  color: #3D7C71;
+}
+
+.result-stage-item p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #23262B;
+  line-height: 1.5;
+}
+
+/* stage.scores (이 Stage 하나에서 받은 0~3점 원점수 3개)를 작은
+   칩 형태로 나열합니다. 위쪽 result-stat-*(전체 누적 %) 와는 다른
+   숫자라는 걸 시각적으로 구분하기 위해 진행바 없이 텍스트 칩으로만
+   표시합니다. */
+.result-stage-scores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.result-stage-scores span {
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: #F0EDE3;
+  color: #5A5F5E;
+  font-size: 0.75rem;
+}
+
+.result-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 560px) {
+  .result-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* Episode list page */
+.episode-list-page {
+  max-width: 1000px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 40px 20px 48px;
+  background: #FFFFFF;
+  color: #23262B;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Malgun Gothic",
+    sans-serif;
+  box-sizing: border-box;
+}
+
+.episode-list-header {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  margin-bottom: 28px;
+}
+
+.mascot {
+  flex-shrink: 0;
+  width: 108px;
+  transform: rotate(-4deg);
+}
+
+.mascot-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.header-text {
+  flex: 1;
+  padding-bottom: 6px;
+}
+
+.header-label {
+  margin: 0 0 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #3D7C71;
+}
+
+.header-title {
+  margin: 0;
+  font-size: 1.4rem;
+  line-height: 1.35;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: #23262B;
+}
+
+.episode-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.episode-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border: none;
+  border-radius: 16px;
+  padding: 20px 22px;
+  background: #E3DDCC;
+  cursor: pointer;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.episode-item:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(35, 38, 43, 0.08);
+}
+
+.episode-item:disabled {
+  cursor: default;
+}
+
+.episode-item-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.episode-item-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3D7C71;
+}
+
+.episode-item-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #23262B;
+}
+
+.episode-item-desc {
+  font-size: 0.85rem;
+  color: #9C978C;
+}
+
+.episode-item-arrow {
+  font-size: 1.2rem;
+  color: #9C978C;
+  flex-shrink: 0;
+}
+
+.episode-list-footer {
+  margin: 32px 0 0;
+  text-align: center;
+  font-size: 0.78rem;
+  color: #B4AFA1;
+}
+/* =====================================================================
+   2026-09 UX refresh — 청소년 게임형 시뮬레이션 플레이 화면
+   - 한 화면 한 행동: 플레이 중 점수 %는 숨기고 현재 상황/대화/코칭에 집중
+   - 장면 전환, 효과음 토글, 마냥이 코칭 존재감 강화
+   - 기존 API/시나리오 구조는 변경하지 않음
+   ===================================================================== */
+.play-page--immersive {
+  position: relative;
+  width: 100%;
+  max-width: 920px;
+  min-height: calc(100dvh - var(--header-h));
+  height: auto;
+  margin: 0 auto;
+  padding: 22px 20px 48px;
+  overflow: visible;
+  background:
+    radial-gradient(circle at 90% 0%, rgba(144, 116, 255, 0.08), transparent 28%),
+    radial-gradient(circle at 0% 24%, rgba(61, 124, 113, 0.08), transparent 30%),
+    #fff;
+}
+
+.play-topbar--game {
+  position: relative;
+  top: auto;
+  z-index: 5;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #eee9de;
+  background: transparent;
+}
+
+.game-header--compact {
+  margin-bottom: 12px;
+}
+
+.game-header--compact h1 {
+  margin: 4px 0 0;
+  font-size: clamp(1.55rem, 3vw, 2.15rem);
+  line-height: 1.18;
+  letter-spacing: -0.035em;
+  color: #20252a;
+}
+
+.episode-eyebrow,
+.stage-kicker,
+.scene-brief-label {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #3d7c71;
+}
+
+.play-topbar--game .progress-wrapper {
+  margin: 0;
+}
+
+.play-topbar--game .progress-info {
+  margin-bottom: 7px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #625f59;
+}
+
+.play-topbar--game .progress-track {
+  height: 9px;
+  border-radius: 999px;
+  background: #ece9e3;
+}
+
+.play-topbar--game .progress-fill {
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3d7c71 0%, #5f9f8f 55%, #8d77d9 100%);
+  box-shadow: 0 0 0 1px rgba(61, 124, 113, 0.05);
+}
+
+.sound-toggle {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 40px;
+  margin-top: 2px;
+  padding: 8px 12px;
+  border: 1px solid #dedad0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #4f5554;
+  font: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+}
+
+.sound-toggle:hover {
+  transform: translateY(-1px);
+  border-color: #8bb7ac;
+  box-shadow: 0 5px 16px rgba(61, 124, 113, 0.12);
+}
+
+.stage-header--focus {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 22px 0 12px;
+}
+
+.stage-header--focus h2 {
+  margin: 3px 0 0;
+  font-size: 1.35rem;
+  letter-spacing: -0.025em;
+  color: #20252a;
+}
+
+.stage-header--focus .stage-location {
+  border: 1px solid #e8e3d8;
+  background: #faf8f3;
+  color: #686359;
+}
+
+.scene-brief {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  border: 1px solid #e7eee9;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f4faf8 0%, #fbfaf7 100%);
+}
+
+.scene-brief-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background: #e4f1ed;
+  font-size: 1.05rem;
+}
+
+.scene-brief p {
+  margin: 4px 0 0;
+  color: #4e5553;
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.play-layout--focused {
+  display: block;
+  min-height: 0;
+}
+
+.play-chat--focused {
+  width: 100%;
+  min-width: 0;
+}
+
+.question-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #242a2e;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(31, 39, 43, 0.1);
+}
+
+.question-banner-icon {
+  font-size: 1.15rem;
+}
+
+.question-banner strong {
+  display: block;
+  margin-bottom: 3px;
+  font-size: 0.92rem;
+}
+
+.question-banner p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.chat-window--focused {
+  min-height: 350px;
+  max-height: 470px;
+  border: 1px solid #e6e6e3;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 38px rgba(30, 38, 41, 0.07);
+}
+
+.conversation--focused {
+  min-height: 265px;
+  padding: 22px 20px;
+}
+
+.chat-window--focused .npc-bubble {
+  border-radius: 18px;
+  background: #f1f1ef;
+}
+
+.chat-window--focused .npc-bubble--me {
+  background: linear-gradient(135deg, #7367d8 0%, #9d6dd7 48%, #d36dac 100%);
+}
+
+.chat-window--focused .dm-composer-wrapper,
+.chat-window--focused .dm-composer {
+  background: #fff;
+}
+
+.chat-window--focused .dm-composer {
+  padding: 12px 14px;
+}
+
+.chat-window--focused .dm-composer-input {
+  min-height: 44px;
+  border: 1px solid #e6e4df;
+  border-radius: 15px;
+  background: #f8f8f6;
+  padding: 11px 14px;
+}
+
+.chat-window--focused .dm-composer-input:focus {
+  border-color: #78a99d;
+  box-shadow: 0 0 0 3px rgba(61, 124, 113, 0.1);
+}
+
+.chat-window--focused .dm-composer-send {
+  width: 42px;
+  height: 42px;
+  background: #3d7c71;
+  box-shadow: 0 5px 14px rgba(61, 124, 113, 0.25);
+}
+
+.chat-window--focused .dm-composer-send:hover:not(:disabled) {
+  box-shadow: 0 7px 18px rgba(61, 124, 113, 0.32);
+}
+
+.ai-loading--game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0;
+  padding: 10px 14px;
+  border-top: 1px solid #efede8;
+  background: #fafaf8;
+  color: #5e6664;
+  font-size: 0.8rem;
+}
+
+.ai-loading-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3d7c71;
+  animation: pulseDot 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes pulseDot {
+  from { opacity: 0.35; transform: scale(0.75); }
+  to { opacity: 1; transform: scale(1.15); }
+}
+
+.coach-dock {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid #cfe2dc;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #eff8f5 0%, #fbfaf7 100%);
+  box-shadow: 0 10px 28px rgba(61, 124, 113, 0.08);
+  animation: coachDockIn 0.34s ease-out both;
+}
+
+@keyframes coachDockIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.skill-focus-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: #5b625f;
+  font-size: 0.75rem;
+  box-shadow: inset 0 0 0 1px #dfe9e5;
+}
+
+.skill-focus-pill strong {
+  color: #2f6b60;
+}
+
+.coach-dock .manyang-coach {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.coach-dock .manyang-character {
+  width: 58px;
+  height: 58px;
+  border: 2px solid #fff;
+  box-shadow: 0 6px 18px rgba(61, 124, 113, 0.16);
+}
+
+.coach-dock .manyang-coach strong {
+  font-size: 0.9rem;
+  color: #2c5f56;
+}
+
+.coach-dock .manyang-coach p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: #3f4745;
+}
+
+.coach-dock-note {
+  margin: 10px 0 0 66px;
+  color: #7a807e;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+
+.next-button--game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  margin-top: 12px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #3d7c71 0%, #4d9183 100%);
+  box-shadow: 0 8px 20px rgba(61, 124, 113, 0.2);
+  font-size: 0.96rem;
+  font-weight: 800;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.next-button--game:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #356e64 0%, #438277 100%);
+  box-shadow: 0 10px 24px rgba(61, 124, 113, 0.26);
+}
+
+.scene-transition {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+  z-index: 29;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  pointer-events: none;
+  background: rgba(28, 34, 37, 0.82);
+  backdrop-filter: blur(8px);
+  animation: sceneCurtain 0.95s ease both;
+}
+
+.scene-transition-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: min(440px, 88vw);
+  padding: 28px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  animation: sceneCardIn 0.72s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.scene-transition-step {
+  color: #bde1d7;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.scene-transition-card strong {
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  letter-spacing: -0.04em;
+}
+
+.scene-transition-location {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.85rem;
+}
+
+@keyframes sceneCurtain {
+  0% { opacity: 0; }
+  14%, 76% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes sceneCardIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.96); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 700px) {
+  .play-page--immersive {
+    padding: 16px 14px 36px;
+  }
+
+  .play-topbar--game {
+    gap: 10px;
+  }
+
+  .sound-toggle-label {
+    display: none;
+  }
+
+  .sound-toggle {
+    width: 40px;
+    min-width: 40px;
+    padding: 8px;
+    justify-content: center;
+  }
+
+  .stage-header--focus {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .scene-brief {
+    padding: 12px 13px;
+  }
+
+  .question-banner {
+    padding: 13px 14px;
+  }
+
+  .chat-window--focused {
+    min-height: 390px;
+    max-height: 56dvh;
+  }
+
+  .conversation--focused {
+    padding: 18px 14px;
+  }
+
+  .coach-dock .manyang-character {
+    width: 50px;
+    height: 50px;
+  }
+
+  .coach-dock-note {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-transition,
+  .scene-transition-card,
+  .coach-dock,
+  .npc-avatar,
+  .npc-bubble,
+  .ig-bubble,
+  .ai-loading-dot {
+    animation: none !important;
+  }
+
+  .progress-fill,
+  .sound-toggle,
+  .next-button--game {
+    transition: none !important;
+  }
+}
+
+/* =====================================================================
+   Resilience / fallback mode
+   - Backend/AI 장애 시 학생 학습 흐름을 중단하지 않고 기본 학습 모드 표시
+   ===================================================================== */
+.play-topbar-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 0 0 auto;
+}
+
+.service-mode-pill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid #d7e4df;
+  border-radius: 999px;
+  background: #f4faf8;
+  color: #356c62;
+  font-size: 0.74rem;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+/* 이전 UX 패치에서 토글이 표시 전용이 되지 않도록 실제 클릭 허용 */
+.sound-toggle {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.result-fallback-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px 22px;
+  border: 1px solid #d8e8e2;
+  border-radius: 20px;
+  background: #f5fbf9;
+  color: #34413e;
+}
+
+.result-fallback-card strong {
+  color: #2f6c61;
+  font-size: 0.98rem;
+}
+
+.result-fallback-card p {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: #5a6663;
+}
+
+@media (max-width: 700px) {
+  .play-topbar-actions {
+    gap: 6px;
+  }
+
+  .service-mode-pill {
+    max-width: 108px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/* =====================================================================
+   2026-09-18 Play viewport fit patch
+   - 플레이 페이지 자체 스크롤 제거
+   - 브라우저 한 화면(헤더 제외) 안에 Stage UI를 고정
+   - 대화가 길어질 때는 채팅 영역 내부에서만 스크롤
+   - 피드백/다음 버튼이 나타나도 전체 페이지 높이가 늘어나지 않도록 flex 구조 보강
+   ===================================================================== */
+
+/* 최신 Chrome/Edge에서는 플레이 페이지가 열려 있을 때 body 스크롤 자체를 막습니다. */
+@supports selector(body:has(.play-page--immersive)) {
+  body:has(.play-page--immersive) {
+    overflow: hidden;
+  }
+}
+
+.play-page.play-page--immersive {
+  width: 100%;
+  max-width: 920px;
+  height: calc(100dvh - var(--header-h));
+  min-height: 0;
+  margin: 0 auto;
+  padding: 10px 14px 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 상단 에피소드 제목 + 진행도 영역을 더 압축 */
+.play-page--immersive .play-topbar--game {
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0 0 9px;
+}
+
+.play-page--immersive .game-header--compact {
+  margin-bottom: 5px;
+}
+
+.play-page--immersive .game-header--compact h1 {
+  margin-top: 2px;
+  font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+  line-height: 1.12;
+}
+
+.play-page--immersive .play-topbar--game .progress-info {
+  margin-bottom: 5px;
+}
+
+.play-page--immersive .play-topbar--game .progress-track {
+  height: 8px;
+}
+
+.play-page--immersive .sound-toggle,
+.play-page--immersive .service-mode-pill {
+  min-height: 34px;
+}
+
+/* STEP 제목 영역 */
+.play-page--immersive .stage-header--focus {
+  flex: 0 0 auto;
+  margin: 9px 0 7px;
+  gap: 10px;
+}
+
+.play-page--immersive .stage-header--focus h2 {
+  margin-top: 2px;
+  font-size: 1.18rem;
+  line-height: 1.15;
+}
+
+.play-page--immersive .stage-location {
+  padding: 5px 10px;
+  font-size: 0.76rem;
+}
+
+/* 현재 상황 설명은 두 줄 안에서 보이도록 압축 */
+.play-page--immersive .scene-brief {
+  flex: 0 0 auto;
+  gap: 10px;
+  margin-bottom: 7px;
+  padding: 9px 11px;
+  border-radius: 14px;
+}
+
+.play-page--immersive .scene-brief-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.play-page--immersive .scene-brief p {
+  margin-top: 2px;
+  font-size: 0.82rem;
+  line-height: 1.38;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+/* 남은 높이를 게임/채팅 영역이 전부 사용 */
+.play-page--immersive .play-layout--focused {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.play-page--immersive .play-chat--focused {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* 질문 영역은 고정, 채팅창만 남은 높이를 사용 */
+.play-page--immersive .question-banner {
+  flex: 0 0 auto;
+  gap: 10px;
+  margin-bottom: 7px;
+  padding: 9px 12px;
+  border-radius: 14px;
+}
+
+.play-page--immersive .question-banner strong {
+  margin-bottom: 2px;
+  font-size: 0.86rem;
+}
+
+.play-page--immersive .question-banner p {
+  font-size: 0.81rem;
+  line-height: 1.4;
+}
+
+.play-page--immersive .chat-window--focused {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  max-height: none;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+/* 페이지가 아니라 대화 내용만 내부 스크롤 */
+.play-page--immersive .conversation--focused {
+  flex: 1 1 auto;
+  min-height: 0;
+  padding: 12px 14px;
+  gap: 10px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+}
+
+.play-page--immersive .conversation-turn {
+  gap: 10px;
+}
+
+.play-page--immersive .npc-message {
+  gap: 8px;
+}
+
+.play-page--immersive .npc-avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.play-page--immersive .npc-bubble {
+  padding: 8px 12px;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
+/* 입력창은 채팅 하단에 항상 보이도록 고정 */
+.play-page--immersive .dm-composer {
+  flex: 0 0 auto;
+  padding: 8px 10px;
+}
+
+.play-page--immersive .dm-composer-input {
+  min-height: 38px;
+  max-height: 72px;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+}
+
+.play-page--immersive .dm-composer-send {
+  width: 38px;
+  height: 38px;
+}
+
+/* 답변 후 코칭 카드와 다음 버튼도 화면 내부에 머물도록 제한 */
+.play-page--immersive .coach-dock {
+  flex: 0 1 auto;
+  max-height: 150px;
+  margin-top: 7px;
+  padding: 9px 11px;
+  overflow-y: auto;
+}
+
+.play-page--immersive .skill-focus-pill {
+  margin-bottom: 6px;
+  padding: 5px 8px;
+}
+
+.play-page--immersive .coach-dock .manyang-character {
+  width: 44px;
+  height: 44px;
+}
+
+.play-page--immersive .coach-dock .manyang-coach p {
+  font-size: 0.82rem;
+  line-height: 1.42;
+}
+
+.play-page--immersive .coach-dock-note {
+  margin: 6px 0 0 52px;
+  font-size: 0.68rem;
+}
+
+.play-page--immersive .next-button--game {
+  flex: 0 0 auto;
+  min-height: 44px;
+  margin-top: 7px;
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+/* 높이가 작은 노트북에서도 한 화면에 맞도록 한 번 더 압축 */
+@media (max-height: 760px) {
+  :root {
+    --header-h: 64px;
+  }
+
+  .site-header {
+    padding: 0 16px;
+  }
+
+  .site-header-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  .play-page.play-page--immersive {
+    padding-top: 7px;
+    padding-bottom: 7px;
+  }
+
+  .play-page--immersive .episode-eyebrow,
+  .play-page--immersive .stage-kicker,
+  .play-page--immersive .scene-brief-label {
+    font-size: 0.66rem;
+  }
+
+  .play-page--immersive .game-header--compact h1 {
+    font-size: 1.25rem;
+  }
+
+  .play-page--immersive .stage-header--focus {
+    margin: 6px 0 5px;
+  }
+
+  .play-page--immersive .scene-brief {
+    margin-bottom: 5px;
+    padding: 7px 9px;
+  }
+
+  .play-page--immersive .scene-brief p {
+    -webkit-line-clamp: 1;
+  }
+
+  .play-page--immersive .question-banner {
+    margin-bottom: 5px;
+    padding: 7px 10px;
+  }
+
+  .play-page--immersive .conversation--focused {
+    padding: 9px 12px;
+    gap: 8px;
+  }
+
+  .play-page--immersive .coach-dock {
+    max-height: 118px;
+  }
+
+  .play-page--immersive .next-button--game {
+    min-height: 40px;
+    margin-top: 5px;
+  }
+}
+
+/* 기존 700px 이하 규칙의 height:auto / min-height:390px를 다시 덮어써서
+   작은 화면에서도 페이지 자체는 늘어나지 않고 채팅 내부만 스크롤되게 합니다. */
+@media (max-width: 700px) {
+  .play-page.play-page--immersive {
+    height: calc(100dvh - var(--header-h));
+    min-height: 0;
+    padding: 8px 10px;
+    overflow: hidden;
+  }
+
+  .play-page--immersive .play-topbar--game {
+    gap: 8px;
+    padding-bottom: 7px;
+  }
+
+  .play-page--immersive .stage-header--focus {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .play-page--immersive .stage-location {
+    max-width: 44%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .play-page--immersive .scene-brief {
+    padding: 8px 10px;
+  }
+
+  .play-page--immersive .question-banner {
+    padding: 8px 10px;
+  }
+
+  .play-page--immersive .chat-window--focused {
+    min-height: 0;
+    height: auto;
+    max-height: none;
+  }
+
+  .play-page--immersive .conversation--focused {
+    min-height: 0;
+    padding: 10px 12px;
+  }
+
+  .play-page--immersive .coach-dock-note {
+    margin-left: 0;
+  }
+}
+
+/* =====================================================================
+   EP01 STEP 1 — 포장지 없는 알약 이미지 메시지
+   - 1번 viewport 고정 패치를 유지한 채 채팅 안에만 이미지 스타일을 추가
+   ===================================================================== */
+.chat-window--focused .npc-bubble--image {
+  padding: 6px;
+  background: transparent;
+}
+
+.loose-pill-photo {
+  position: relative;
+  width: 156px;
+  height: 136px;
+  overflow: hidden;
+  border-radius: 16px;
+  background:
+    linear-gradient(145deg, rgba(255,255,255,0.9), rgba(221,224,228,0.95)),
+    #e4e5e7;
+  border: 1px solid #e1e2e4;
+  box-shadow: 0 5px 16px rgba(73, 79, 86, 0.12);
+}
+
+.loose-pill-photo::before {
+  content: "포장지 없는 알약";
+  position: absolute;
+  z-index: 3;
+  left: 10px;
+  bottom: 8px;
+  padding: 3px 7px;
+  border-radius: 999px;
+  background: rgba(25, 29, 32, 0.66);
+  color: #fff;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.loose-pill-photo-surface {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(255,255,255,0.96) 0%, rgba(255,255,255,0) 24%),
+    linear-gradient(180deg, rgba(255,255,255,0.18), rgba(0,0,0,0.04));
+}
+
+.pill-dot {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 42px;
+  height: 20px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fffdfa 0%, #f1eee7 100%);
+  border: 1px solid rgba(187, 182, 171, 0.76);
+  box-shadow: 0 4px 10px rgba(91, 96, 103, 0.16);
+}
+
+.pill-dot::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 50%;
+  width: 1px;
+  transform: translateX(-50%);
+  background: rgba(185, 180, 169, 0.82);
+}
+
+.pill-dot--a { top: 24px; left: 18px; transform: rotate(-18deg); }
+.pill-dot--b { top: 22px; right: 18px; transform: rotate(22deg); }
+.pill-dot--c { top: 55px; left: 55px; transform: rotate(8deg); }
+.pill-dot--d { top: 57px; right: 25px; transform: rotate(-28deg); }
+.pill-dot--e { bottom: 27px; left: 24px; transform: rotate(16deg); }
+.pill-dot--f { bottom: 24px; right: 23px; transform: rotate(-8deg); }
+
+@media (max-height: 760px) {
+  .loose-pill-photo {
+    width: 132px;
+    height: 104px;
+  }
+
+  .pill-dot {
+    width: 36px;
+    height: 17px;
+  }
+
+  .pill-dot--a { top: 20px; left: 14px; }
+  .pill-dot--b { top: 18px; right: 14px; }
+  .pill-dot--c { top: 44px; left: 46px; }
+  .pill-dot--d { top: 47px; right: 20px; }
+  .pill-dot--e { bottom: 24px; left: 20px; }
+  .pill-dot--f { bottom: 22px; right: 19px; }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>가입 페이지</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #F5F5F5;
+            color: #222;
+            font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+        }
+
+        .admin-container {
+            max-width: 480px;
+            margin: 0 auto;
+        }
+
+        .admin-card {
+            background: #FFFFFF;
+            border: 1px solid #DDD;
+            border-radius: 8px;
+            padding: 24px;
+        }
+
+        .admin-card label {
+            display: block;
+            margin: 14px 0 6px;
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        .admin-card label:first-of-type {
+            margin-top: 0;
+        }
+
+        .admin-card input[type="text"],
+        .admin-card input[type="password"] {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        .admin-card br {
+            display: none;
+        }
+
+        .admin-card button[type="submit"] {
+            display: block;
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            background: #333;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        .admin-card button[type="submit"]:hover {
+            background: #111;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="admin-card">
+            <form method="post" action="/admins/signup">
+              <label>ID</label> <input type = "text" name = "admin_id" id="admin_id" placeholder="아이디를 입력하시오." required maxlength="20">
+              <br>
+              <label>비밀번호</label> <input type="password" name = "admin_pw" id = "admin_pw" placeholder="비밀번호를 입력하시오." required maxlength="20">
+              <br>
+              <label>비밀번호 확인</label> <input type="password" id = "admin_pw_confirm" placeholder="비밀번호를 다시 입력하시오." required maxlength="20">
+              <br>
+              <label>이름</label> <input type = "text" name = "admin_name" id = "admin_name" placeholder="이름을 입력하시오" required>
+              <br>
+              <label>교원번호</label> <input type="text" name = "teacher_num" id = "teacher_num" placeholder = "교원번호를 입력하시오" required maxlength="6">
+              <br>
+              <label>전화번호</label> <input type="text" name = "contact" id="contact" placeholder = "전화번호를 입력하시오" required maxlength = "13">
+              <br>
+              <button type="submit">
+                가입하기
+              </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

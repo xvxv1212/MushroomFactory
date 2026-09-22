@@ -1,0 +1,39 @@
+{
+  "episode_id": "EP01",
+
+  "stage_id": "EP01_STAGE01",
+
+  "stage_number": 1,
+
+  "total_stages": 5,
+
+  "title": "위험 인지",
+
+  "location": "스터디 단체 채팅방",
+
+  "description": "스터디 단체 채팅방에 포장지가 없는 알약 사진이 올라온다.",
+
+  "messages": [
+    {
+      "speaker": "학생1",
+      "text": "나 요즘 이거 먹고 공부하는데 잠이 하나도 안 온다."
+    },
+
+    {
+      "speaker": "학생1",
+      "text": "집중도 엄청 잘 됨."
+    },
+
+    {
+      "speaker": "친구1",
+      "text": "나도 써봄."
+    },
+
+    {
+      "speaker": "친구2",
+      "text": "효과 좋음."
+    }
+  ],
+
+  "question": "이 상황에서 어떤 점이 가장 신경 쓰이나요?"
+}

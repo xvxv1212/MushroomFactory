@@ -1,0 +1,76 @@
+{
+  "EP01_STAGE01": [
+    {
+      "input": "무슨 약인지도 모르고 포장도 없는데 먹어도 되는지 의심스러워.",
+      "expected_score": 3
+    },
+    {
+      "input": "조금 이상하긴 한데 잘 모르겠어.",
+      "expected_score": 2
+    },
+    {
+      "input": "집중 잘된다니 나도 한번 먹어보고 싶다.",
+      "expected_score": 0
+    }
+  ],
+
+  "EP01_STAGE02": [
+    {
+      "input": "싫어. 무슨 약인지도 모르는데 나는 안 먹을래.",
+      "expected_score": 3
+    },
+    {
+      "input": "나는 그냥 안 먹는 게 좋을 것 같아.",
+      "expected_score": 2
+    },
+    {
+      "input": "다들 먹는 거면 한번 먹어볼까.",
+      "expected_score": 0
+    }
+  ],
+
+  "EP01_STAGE03": [
+    {
+      "input": "다른 애들이 계속 먹더라도 나는 무슨 약인지 모르니까 먹지 않을 거야.",
+      "expected_score": 3
+    },
+    {
+      "input": "나는 먹고 싶지는 않은데 다른 애들이 괜찮다고 하니까 조금 고민될 것 같아.",
+      "expected_score": 2
+    },
+    {
+      "input": "다른 애들이 계속 먹고 괜찮다고 하니까 나도 같이 먹어볼게.",
+      "expected_score": 0
+    }
+  ],
+
+  "EP01_STAGE04": [
+    {
+      "input": "상태가 안 좋아 보이니까 바로 선생님이나 보건교사에게 알려야 해.",
+      "expected_score": 3
+    },
+    {
+      "input": "누군가에게 알려야 할 것 같아.",
+      "expected_score": 2
+    },
+    {
+      "input": "우리도 문제 될 수 있으니까 그냥 모르는 척하자.",
+      "expected_score": 0
+    }
+  ],
+
+  "EP01_STAGE05": [
+    {
+      "input": "기록을 지우지 않고 믿을 수 있는 어른에게 지금까지 있었던 일을 말할 거야.",
+      "expected_score": 3
+    },
+    {
+      "input": "기록은 지우면 안 될 것 같아.",
+      "expected_score": 2
+    },
+    {
+      "input": "알겠어. 기록도 지울게.",
+      "expected_score": 0
+    }
+  ]
+}

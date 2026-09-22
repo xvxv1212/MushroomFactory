@@ -1,0 +1,21 @@
+{
+  "episode_id": "EP01",
+
+  "title": "시험기간 스터디 그룹",
+
+  "scores": {
+    "risk_awareness": 67,
+    "refusal": 83,
+    "help_request": 83
+  },
+
+  "stage_scores": {
+    "EP01_STAGE01": 2,
+    "EP01_STAGE02": 3,
+    "EP01_STAGE03": 2,
+    "EP01_STAGE04": 3,
+    "EP01_STAGE05": 2
+  },
+
+  "completed": true
+}

@@ -1,0 +1,17 @@
+{
+  "episode_id": "EP01",
+
+  "stage_id": "EP01_STAGE05",
+
+  "npc_response": "알겠어... 하지만 이 일은 커지지 않았으면 좋겠다.",
+
+  "feedback": "상황을 숨기지 않고 도움을 요청하려는 판단을 잘했어요.",
+
+  "axis": "help_request",
+
+  "score": 3,
+
+  "next_stage": null,
+
+  "episode_completed": true
+}

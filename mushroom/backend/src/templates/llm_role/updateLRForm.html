@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ llm_role.title }} 수정폼</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background: #F5F5F5;
+            color: #222;
+            font-family: -apple-system, "Segoe UI", "Malgun Gothic", sans-serif;
+        }
+
+        form {
+            max-width: 640px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .write-row {
+            display: flex;
+            gap: 8px;
+        }
+
+        select,
+        input[type="text"] {
+            padding: 10px 12px;
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            font-size: 0.95rem;
+        }
+
+        input[type="text"] {
+            flex: 1;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 360px;
+            padding: 12px 14px;
+            border: 1px solid #CCC;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            line-height: 1.5;
+            resize: vertical;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            align-self: flex-start;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            background: #333;
+            color: #FFFFFF;
+            font-size: 0.95rem;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background: #111;
+        }
+    </style>
+</head>
+<body>
+    <form method="post" action="/admins/updateLlmRole/{{ llm_role.lr_num }}">
+        <div class="write-row">
+            <select name="category">
+                <option value="school" {% if llm_role.category == "school" %}selected{% endif %}>교내</option>
+                <option value="trip" {% if llm_role.category == "trip" %}selected{% endif %}>해외여행</option>
+                <option value="club" {% if llm_role.category == "club" %}selected{% endif %}>클럽마약</option>
+                <option value="user_defined" {% if llm_role.category == "user_defined" %}selected{% endif %}>사용자 정의</option>
+            </select>
+            <input type="text" name="title" placeholder="제목을 입력하시오" value="{{ llm_role.title }}" maxlength="30" required>
+        </div>
+        <textarea name="content" placeholder="챗봇에게 제공할 상황을 상세하게 기술해주세요." >
+            {{ llm_role.content }}
+        </textarea>
+        <button type="submit">
+            수정하기
+        </button>
+    </form>
+</body>
+</html>
